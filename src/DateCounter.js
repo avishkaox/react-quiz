@@ -32,24 +32,18 @@ function DateCounter() {
   date.setDate(date.getDate() + count);
 
   const dec = function () {
-    // setCount((count) => count - 1);
-    // setCount((count) => count - step);
     dispatch({ type: "dec" });
   };
 
   const inc = function () {
-    // setCount((count) => count + 1);
-    // setCount((count) => count + step);
     dispatch({ type: "inc" });
   };
 
   const defineCount = function (e) {
-    // setCount(Number(e.target.value));
     dispatch({ type: "setCount", payload: Number(e.target.value) });
   };
 
   const defineStep = function (e) {
-    // setStep(Number(e.target.value));
     dispatch({ type: "setStep", payload: Number(e.target.value) });
   };
 
@@ -73,7 +67,7 @@ function DateCounter() {
       </div>
 
       <div>
-        <button onClick={dec}>-</button>
+        <button onClick={()=>{dispatch({ type: "dec" })}}>-</button>
         <input value={count} onChange={defineCount} />
         <button onClick={inc}>+</button>
       </div>
